@@ -9,7 +9,8 @@ class QuizBrain:
         current_question = self.question_list[self.question_number]
         self.question_number += 1
         user_answer = input(f"Q.{self.question_number}: {current_question.text} (True/False): ")
-        if user_answer.lower() != 'true' or user_answer.lower() != 'false':
+        print(f'user_answer: {user_answer}')
+        if user_answer.lower() != 'true' and user_answer.lower() != 'false':
             user_answer = input(f"Please enter True or False: ")
         self.check_answer(user_answer, current_question.answer)
 
@@ -27,3 +28,4 @@ class QuizBrain:
     def still_has_questions(self, question_list):
         return self.question_number < len(question_list)
             
+    

@@ -1,10 +1,11 @@
 from data import question_data
 from question_model import Question
 from quiz_brain import QuizBrain
+import json
 
 
 question_bank = [
-    Question(question['text'], question['answer']) for question in question_data
+    Question(question['question'], question['correct_answer']) for question in question_data
 ]
 
 quiz = QuizBrain(question_bank)
